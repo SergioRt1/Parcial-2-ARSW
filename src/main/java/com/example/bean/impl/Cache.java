@@ -33,7 +33,9 @@ public class Cache implements Persistance {
             return cache.get(name);
         } else {
             try {
-                return HttpConnection.getSerieHttp(name, type);
+                String serie = HttpConnection.getSerieHttp(name, type);
+                cache.put(name, serie);
+                return serie;
             } catch (IOException ex) {
                 throw new SeriesServicesException("Error al obtener del API externo.");
             }
