@@ -17,8 +17,8 @@ public class HttpConnection {
     private static final String USER_AGENT = "Mozilla/5.0";
 
     public static String getSerieHttp(String name, String type) throws IOException {
-        type = "TIME_SERIES_DAILY";
-        name = "fb";
+//        type = "TIME_SERIES_DAILY";
+//        name = "fb";
         String GET_URL = String.format("https://www.alphavantage.co/query?function=%s&symbol=%s&apikey=Q1QZFVJQ21K7C6XM",type,name);
         URL obj = new URL(GET_URL);
         HttpURLConnection con = (HttpURLConnection) obj.openConnection();
